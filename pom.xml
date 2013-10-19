@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>zTree</artifactId>
-    <version>3.5.15-SNAPSHOT</version>
+    <version>3.5.15</version>
     <name>zTree</name>
     <description>WebJar for zTree</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/zTree</url>
         <connection>scm:git:https://github.com/webjars/zTree.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/zTree.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>zTree-3.5.15</tag>
     </scm>
     
     <dependencies>
@@ -88,16 +88,16 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/${project.artifactId}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}" includes="js/ css/" excludes="js/jquery-*"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}" includes="js/ css/" excludes="js/jquery-*" />
                                 </move>
-                                <echo message="removing version from js files"/>
+                                <echo message="removing version from js files" />
                                 <move todir="${destDir}/js">
-                                    <fileset dir="${destDir}/js"/>
-                                    <mapper type="glob" from="*-3.5.js" to="*.js"/>
+                                    <fileset dir="${destDir}/js" />
+                                    <mapper type="glob" from="*-3.5.js" to="*.js" />
                                 </move>
                                 <move todir="${destDir}/js">
-                                    <fileset dir="${destDir}/js"/>
-                                    <mapper type="glob" from="*-3.5.min.js" to="*.min.js"/>
+                                    <fileset dir="${destDir}/js" />
+                                    <mapper type="glob" from="*-3.5.min.js" to="*.min.js" />
                                 </move>
                             </target>
                         </configuration>
