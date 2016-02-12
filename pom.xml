@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>zTree</artifactId>
-    <version>3.5.16-SNAPSHOT</version>
+    <version>3.5.16</version>
     <name>zTree</name>
     <description>WebJar for zTree</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/zTree</url>
         <connection>scm:git:https://github.com/webjars/zTree.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/zTree.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>zTree-3.5.16</tag>
     </scm>
     
     <dependencies>
@@ -84,11 +84,11 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/zTree_v3-${upstream.version}" includes="js/ css/" excludes="js/jquery-*"/>
+                                    <fileset dir="${project.build.directory}/zTree_v3-${upstream.version}" includes="js/ css/" excludes="js/jquery-*" />
                                 </move>
                                 <echo message="removing version from js files" />
                                 <move todir="${destDir}/js">
